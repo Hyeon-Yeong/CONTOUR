@@ -1,0 +1,55 @@
+[CASE1] Best Cost found at iteration, [CASE2] Best Cost found at iteration, [CASE3] Best Cost found at iteration, Final_Cost, Expected_Cost, Difference_Cost
+ablation2_43_1, ablation2_43_2, ablation2_42_10, -18.58, -18.83, 0.25
+Number of Iterations, Number of Particles, Elapsed time for optimization (s)
+44, 14, 42694.60
+Selected Case, MN1, LNA, MN2, ADD, MN3, MX
+case1,case1_mn1_3,case1_lna_ss1,case1_mn2_0,case1_add_ss0,case1_mn3_2,case1_mx_sd1,
+Omega Parameter,Value
+case1_MN1_3.MN_C,10.0
+case1_MN1_3.MN_L,1.0
+case1_LNA_ss1.L1,0.13
+case1_LNA_ss1.L2,0.18
+case1_LNA_ss1.L3,0.18
+case1_LNA_ss1.L4,0.13
+case1_LNA_ss1.W1,25.0
+case1_LNA_ss1.W2,25.0
+case1_LNA_ss1.W3,25.0
+case1_LNA_ss1.W4,25.0
+case1_LNA_ss1.R1,2020.0
+case1_LNA_ss1.C1,1.1666479981945959
+case1_Vb_lna_ss1,2.0
+case1_MN3_2.MN_C,0.1
+case1_MN3_2.MN_L,10.0
+case1_Vb_mn3_2,1.6721957342196858
+case1_MX_sd1.L1,0.13
+case1_MX_sd1.L2,0.13
+case1_MX_sd1.L3,0.18
+case1_MX_sd1.W1,25.0
+case1_MX_sd1.W2,24.996223901245777
+case1_MX_sd1.W3,5.0
+case1_MX_sd1.R_l,2020.0
+case1_Vb_mx_sd1,0.8
+case1_Vb_mnlo_mx_sd1,1.7651320446773178
+case1_LNA_ss1.R_f,20000
+case1_Vdd_lna_ss1,2.5
+case1_Vdd_mx_sd1,2.5
+Alpha Parameter,Value
+case1_mn1_0,4.338732394675383e-05
+case1_mn1_1,4.338732394675383e-05
+case1_mn1_2,4.338732394675383e-05
+case1_mn1_3,0.9556694068413716
+case1_mn1_4,4.441977095792608e-05
+case1_mn1_5,0.044156011415830206
+case1_lna_ss0,0.005256545302468423
+case1_lna_ss1,0.967465651587412
+case1_lna_ss2,0.02727780311011952
+case1_mn2_0,0.9897102269013704
+case1_mn2_1,4.4932774786535164e-05
+case1_mn2_2,0.0005816882943251382
+case1_mn2_3,0.005100183781972495
+case1_mn2_4,0.004488471258760269
+case1_mn2_5,7.449698878501071e-05
+case1_mn3_0,0.00015196409424392913
+case1_mn3_1,6.575140837037491e-05
+case1_mn3_2,0.9979958909614375
+case1_mn3_4,0.001786393535948162

@@ -1,0 +1,36 @@
+Final_Optimized_Cost, Final_Cost, Difference_Cost
+-35.26, -18.58, 16.68
+Additional Omega Iterations, Additional Omega Particles, Elapsed time for optimization (s)
+24, 18, 29328.42
+Selected Case, MN1, LNA, MN2, ADD, MN3, MX
+case1,
+Omega Parameter,Value
+case1_MN1_3.MN_C,10.0
+case1_MN1_3.MN_L,2.434542137044737
+case1_LNA_ss1.L1,0.18
+case1_LNA_ss1.L2,0.14227195924938307
+case1_LNA_ss1.L3,0.13
+case1_LNA_ss1.L4,0.16287482018278424
+case1_LNA_ss1.W1,25.0
+case1_LNA_ss1.W2,17.591976100512124
+case1_LNA_ss1.W3,18.91535544296285
+case1_LNA_ss1.W4,25.0
+case1_LNA_ss1.R1,249.16055279513606
+case1_LNA_ss1.C1,0.1
+case1_Vb_lna_ss1,1.7973720011472183
+case1_MN3_2.MN_C,10.0
+case1_MN3_2.MN_L,9.919038669220274
+case1_Vb_mn3_2,1.6249520487546796
+case1_MX_sd1.L1,0.1668845238627198
+case1_MX_sd1.L2,0.13
+case1_MX_sd1.L3,0.13966911824294523
+case1_MX_sd1.W1,13.489727123171287
+case1_MX_sd1.W2,18.850637338685107
+case1_MX_sd1.W3,24.05202505703882
+case1_MX_sd1.R_l,1328.843835826003
+case1_Vb_mx_sd1,1.645417108069048
+case1_Vb_mnlo_mx_sd1,1.4151089278380713
+case1_LNA_ss1.R_f,20000
+case1_Vdd_lna_ss1,2.5
+case1_Vdd_lna_ss2,2.5
+case1_Vdd_mx_sd1,2.5

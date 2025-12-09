@@ -1,0 +1,956 @@
+; PUBLIC DEMO NETLIST
+; This file shows the RX testbench topology and parameterization
+; used by CONTOUR. It omits proprietary foundry model includes.
+; Generate your own schematic design in ADS and extract the netlist.
+; THIS FILE IS ONLY AN EXAMPLE
+
+; Top Design: "rf_rx_lib:HB_Z4_a_0618:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="rf_rx_lib:HB_Z4_a_0618:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=2
+; Library Name: rf_rx_lib
+; Cell Name: MNlo_1_N
+; View Name: schematic
+define MNlo_1_N ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3aMNlo__1__N_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3aMNlo__1__N_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+R:R1  vout vb R=20 kOhm Noise=yes 
+C:C1  vin vout C=10 nF 
+end MNlo_1_N
+
+; Library Name: rf_rx_lib
+; Cell Name: MNlo_1_P
+; View Name: schematic
+define MNlo_1_P ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3aMNlo__1__P_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3aMNlo__1__P_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+R:R1  vout vb R=20 kOhm Noise=yes 
+C:C1  vin vout C=1 nF 
+end MNlo_1_P
+
+; Library Name: rf_rx_lib
+; Cell Name: case1_MN2_1
+; View Name: schematic
+define case1_MN2_1 ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase1__MN2__1_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase1__MN2__1_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=948.8906486996079
+R:R1  vout vb R=20 kOhm Noise=yes 
+C:C1  vin vout C=MN_C pF 
+end case1_MN2_1
+
+; Library Name: rf_rx_lib
+; Cell Name: case1_MN2_2
+; View Name: schematic
+define case1_MN2_2 ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase1__MN2__2_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase1__MN2__2_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=965.6354698712519
+MN_L=16.187107227517576
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vout vb L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+C:C1  vin vout C=MN_C pF 
+end case1_MN2_2
+
+; Library Name: rf_rx_lib
+; Cell Name: case1_MN2_3
+; View Name: schematic
+define case1_MN2_3 ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase1__MN2__3_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase1__MN2__3_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=304.6833077964534
+MN_L=2.0436750687270386
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vin vout L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+C:C1  vin vb C=MN_C pF 
+end case1_MN2_3
+
+; Library Name: rf_rx_lib
+; Cell Name: case1_MN2_4
+; View Name: schematic
+define case1_MN2_4 ( vin  vout ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase1__MN2__4_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase1__MN2__4_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=684.2646032095057
+C:C1  vin vout C=MN_C pF 
+end case1_MN2_4
+
+; Library Name: rf_rx_lib
+; Cell Name: case1_MN2_5
+; View Name: schematic
+define case1_MN2_5 ( vin  vout ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase1__MN2__5_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase1__MN2__5_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_L=8.859034625418065
+Q_L_matching=15
+freq_L_matching=5.0
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vout vin L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+end case1_MN2_5
+
+; Library Name: rf_rx_lib
+; Cell Name: case2_ADD_sd1
+; View Name: schematic
+define case2_ADD_sd1 ( vin  voutp  voutn  vdd  gnd  vb1  vb2  vb3 ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase2__ADD__sd1_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase2__ADD__sd1_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+"nmos":MOSFET3  N__14 vb1 gnd gnd Length=L3 um Width=1 um Mode=1 Noise=yes _M=W3 
+"pmos":MOSFET5  vdd vb3 voutn vdd Length=L2 um Width=1 um Mode=1 Noise=yes _M=W2 
+"pmos":MOSFET4  vdd vb3 voutp vdd Length=L2 um Width=1 um Mode=1 Noise=yes _M=W2 
+"nmos":MOSFET1  voutn vin N__14 gnd Length=L1 um Width=1 um Mode=1 Noise=yes _M=W1 
+"nmos":MOSFET2  voutp vb2 N__14 gnd Length=L1 um Width=1 um Mode=1 Noise=yes _M=W1 
+
+L1=0.3106614943460669
+W1=47.61124812347125
+L2=0.39256381666829265
+W2=79.66786490679767
+L3=0.3765890298776172
+W3=142.71182988949144
+end case2_ADD_sd1
+
+; Library Name: rf_rx_lib
+; Cell Name: case2_ADD_sd2
+; View Name: schematic
+define case2_ADD_sd2 ( vin  voutp  voutn  vdd  gnd  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase2__ADD__sd2_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase2__ADD__sd2_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+"nmos":MOSFET3  voutp N__14 gnd gnd Length=L3 um Width=1 um Mode=1 Noise=yes _M=W3 
+R:R2  vdd voutp R=R_l Ohm Noise=yes 
+R:R1  vdd voutn R=R_l Ohm Noise=yes 
+"nmos":MOSFET1  N__14 vin gnd gnd Length=L1 um Width=1 um Mode=1 Noise=yes _M=W1 
+"nmos":MOSFET2  voutn vb N__14 gnd Length=L2 um Width=1 um Mode=1 Noise=yes _M=W2 
+
+L1=0.5782356568146367
+W1=169.78735911993252
+L2=0.5537936532303949
+W2=11.948277676615636
+L3=0.4316737218391788
+W3=138.49353101272803
+R_l=587.1293095688746
+end case2_ADD_sd2
+
+; Library Name: rf_rx_lib
+; Cell Name: case2_MN2_1
+; View Name: schematic
+define case2_MN2_1 ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase2__MN2__1_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase2__MN2__1_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=935.9552633091191
+R:R1  vout vb R=20 kOhm Noise=yes 
+C:C1  vin vout C=MN_C pF 
+end case2_MN2_1
+
+; Library Name: rf_rx_lib
+; Cell Name: case2_MN2_2
+; View Name: schematic
+define case2_MN2_2 ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase2__MN2__2_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase2__MN2__2_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=81.65100472694851
+MN_L=3.479227102231126
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vout vb L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+C:C1  vin vout C=MN_C pF 
+end case2_MN2_2
+
+; Library Name: rf_rx_lib
+; Cell Name: case2_MN2_3
+; View Name: schematic
+define case2_MN2_3 ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase2__MN2__3_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase2__MN2__3_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=607.4534604623404
+MN_L=14.773182228469933
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vin vout L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+C:C1  vin vb C=MN_C pF 
+end case2_MN2_3
+
+; Library Name: rf_rx_lib
+; Cell Name: case2_MN2_4
+; View Name: schematic
+define case2_MN2_4 ( vin  vout ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase2__MN2__4_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase2__MN2__4_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=289.1762805367122
+C:C1  vin vout C=MN_C pF 
+end case2_MN2_4
+
+; Library Name: rf_rx_lib
+; Cell Name: case2_MN2_5
+; View Name: schematic
+define case2_MN2_5 ( vin  vout ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase2__MN2__5_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase2__MN2__5_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_L=5.46650845340224
+Q_L_matching=15
+freq_L_matching=5.0
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vout vin L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+end case2_MN2_5
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_ADD_dd1
+; View Name: schematic
+define case3_ADD_dd1 ( vinp  vinn  voutp  voutn  vdd  gnd ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__ADD__dd1_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__ADD__dd1_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+R:R2  vdd voutp R=R_l Ohm Noise=yes 
+R:R1  vdd voutn R=R_l Ohm Noise=yes 
+"nmos":MOSFET1  voutn vinp gnd gnd Length=L1 um Width=1 um Mode=1 Noise=yes _M=W1 
+"nmos":MOSFET2  voutp vinn gnd gnd Length=L1 um Width=1 um Mode=1 Noise=yes _M=W1 
+
+L1=0.5643572977064037
+W1=37.64073931997449
+R_l=6483.523292937543
+end case3_ADD_dd1
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_1_N
+; View Name: schematic
+define case3_MN2_1_N ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__1__N_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__1__N_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=1.0
+R:R1  vout vb R=20 kOhm Noise=yes 
+C:C1  vin vout C=MN_C pF 
+end case3_MN2_1_N
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_1_P
+; View Name: schematic
+define case3_MN2_1_P ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__1__P_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__1__P_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=1.0
+R:R1  vout vb R=20 kOhm Noise=yes 
+C:C1  vin vout C=MN_C pF 
+end case3_MN2_1_P
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_2_N
+; View Name: schematic
+define case3_MN2_2_N ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__2__N_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__2__N_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=1.0
+MN_L=10
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vout vb L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+C:C1  vin vout C=MN_C pF 
+end case3_MN2_2_N
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_2_P
+; View Name: schematic
+define case3_MN2_2_P ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__2__P_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__2__P_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=1.0
+MN_L=10
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vout vb L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+C:C1  vin vout C=MN_C pF 
+end case3_MN2_2_P
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_3_N
+; View Name: schematic
+define case3_MN2_3_N ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__3__N_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__3__N_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=1.0
+MN_L=10
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vin vout L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+C:C1  vin vb C=MN_C pF 
+end case3_MN2_3_N
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_3_P
+; View Name: schematic
+define case3_MN2_3_P ( vin  vout  vb ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__3__P_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__3__P_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=1.0
+MN_L=10
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vin vout L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+C:C1  vin vb C=MN_C pF 
+end case3_MN2_3_P
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_4_N
+; View Name: schematic
+define case3_MN2_4_N ( vin  vout ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__4__N_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__4__N_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=1.0
+C:C1  vin vout C=MN_C pF 
+end case3_MN2_4_N
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_4_P
+; View Name: schematic
+define case3_MN2_4_P ( vin  vout ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__4__P_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__4__P_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_C=1.0
+C:C1  vin vout C=MN_C pF 
+end case3_MN2_4_P
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_5_N
+; View Name: schematic
+define case3_MN2_5_N ( vin  vout ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__5__N_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__5__N_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_L=10
+Q_L_matching=15
+freq_L_matching=5.0
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vout vin L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+end case3_MN2_5_N
+
+; Library Name: rf_rx_lib
+; Cell Name: case3_MN2_5_P
+; View Name: schematic
+define case3_MN2_5_P ( vin  vout ) 
+;parameters 
+#ifndef inc_rf__rx__lib_3acase3__MN2__5__P_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3acase3__MN2__5__P_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+
+MN_L=10
+Q_L_matching=15
+freq_L_matching=5.0
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  vout vin L=MN_L nH Q=15 F=5 GHz Mode=1 Rdc=0.0 Ohm 
+end case3_MN2_5_P
+
+#ifndef inc_rf__rx__lib_3aHB__Z4__0618_3aschematic__130nm__bulk_2enet
+#define inc_rf__rx__lib_3aHB__Z4__0618_3aschematic__130nm__bulk_2enet 1
+#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#endif
+V_Source:SRC100  case1_gnd 0 Type="V_DC" Vdc=0.0 V SaveCurrent=1 
+aele case1_Zin_mn2=case1_mn2_0*case1_Zin_mn2_0+case1_mn2_1*case1_Zin_mn2_1+case1_mn2_2*case1_Zin_mn2_2+case1_mn2_3*case1_Zin_mn2_3+case1_mn2_4*case1_Zin_mn2_4+case1_mn2_5*case1_Zin_mn2_5;
+Short:case2_iin_mn2_3  N__193 case2_vin_mn2_3 Mode=0 SaveCurrent=yes 
+V_Source:SRC224  N__306 0 Type="V_1Tone" V[1]=(polar(-vtest2/2.0,0)) mV Freq[1]=RFfreq GHz    Vdc=0 V Vac=(polar(-vtest2/2.0,0)) mV SaveCurrent=1 
+aele case1_Zout_add=case1_add_ss0*case1_Zout_add_ss0;
+V_Source:SRC167  case3_vb_mnlo_mx_dd1 0 Type="V_DC" Vdc=case3_Vb_mnlo_mx_dd1 V SaveCurrent=1 
+
+case3_Vdd_mx_dd2=2.5
+case3_Vb_mx_dd2=0.5
+V_Source:SRC211  N__190 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case2_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+Short:case2_iin_mn2_5  N__292 case2_vin_mn2_5 Mode=0 SaveCurrent=yes 
+case2_MN2_4:X90  case2_vin_mn2_4 N__285 
+Short:case2_ioutp_add_sd2  N__273 case2_voutp_add_sd2 Mode=0 SaveCurrent=yes 
+aele case3_Zinp_mn2_0=mix(case3_Zinp_add,{0,1});case3_Zinn_mn2_0=mix(case3_Zinn_add,{0,1});
+MNlo_1_N:X52  case1_LO_Qn_mx_sd1 case1_LO_Qn_mxin_sd1 case1_vb_mnlo_mx_sd1 
+Port:Term60  N__281 0 Num=32 Z=case3_Zinp_add Ohm Noise=yes 
+Short:case3_iinp_mn2_2  N__266 case3_vinp_mn2_2 Mode=0 SaveCurrent=yes 
+MNlo_1_N:X59  case2_LO_Qn_mx_dd1 case2_LO_Qn_mxin_dd1 case2_vb_mnlo_mx_dd1 
+V_Source:SRC210  N__301 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case2_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+#uselib "ckt" , "DAC"
+DAC:DAC5  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC1_a_0618.ds" Type="dataset" Block="aele_38.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+case2_ADD_sd1:X33  N__206 case2_voutp_add_sd1 case2_voutn_add_sd1 case2_vdd_add_sd1 case2_gnd case2_vb1_add_sd1 case2_vb2_add_sd1 case2_vb3_add_sd1 
+MNlo_1_N:X67  case3_LO_In_mx_dd1 case3_LO_In_mxin_dd1 case3_vb_mnlo_mx_dd1 
+MNlo_1_N:X57  case2_LO_Qn_mx_dd2 case2_LO_Qn_mxin_dd2 case2_vb_mnlo_mx_dd2 
+
+RFfreq=5
+IFfreq=0.05
+df=0.01
+LOfreq=RFfreq-IFfreq
+RFpower=-50
+V_Source:SRC219  N__145 0 Type="V_1Tone" V[1]=(polar(-vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutnDC_lna V Vac=(polar(-vtest1/2,0)) mV SaveCurrent=1 
+V_Source:SRC128  case2_vb_mn2_1 0 Type="V_DC" Vdc=case2_Vb_mn2_1 SaveCurrent=1 
+V_Source:SRC138  case2_vb_add_sd2 0 Type="V_DC" Vdc=case2_Vb_add_sd2 V SaveCurrent=1 
+V_Source:SRC172  case1_vb_mn3_2 0 Type="V_DC" Vdc=case1_Vb_mn3_2 V SaveCurrent=1 
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+OutputPlan="DC1_Output" 
+
+OutputPlan:DC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+
+case2_VoutDC_lna=file{DAC5, "case2_VoutDC_lna"}
+V_Source:SRC126  N__263 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case1_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+aele case3_Voutp_add_dd1=mix(HB.case3_voutp_add_dd1,{0,1});case3_Voutn_add_dd1=mix(HB.case3_voutn_add_dd1,{0,1});case3_Ioutp_add_dd1=mix(HB.case3_ioutp_add_dd1.i,{0,1});case3_Ioutn_add_dd1=mix(HB.case3_ioutn_add_dd1.i,{0,1});case3_Zoutp_add_dd1_org=case3_Voutp_add_dd1/case3_Ioutp_add_dd1;case3_Zoutn_add_dd1_org=case3_Voutn_add_dd1/case3_Ioutn_add_dd1;case3_Zoutp_add_dd1 = if (real(case3_Zoutp_add_dd1_org)>0) then case3_Zoutp_add_dd1_org else 0.01+j*imag(case3_Zoutp_add_dd1_org);case3_Zoutn_add_dd1 = if (real(case3_Zoutn_add_dd1_org)>0) then case3_Zoutn_add_dd1_org else 0.01+j*imag(case3_Zoutn_add_dd1_org);
+V_Source:SRC212  N__188 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case2_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+Port:Term88  N__205 0 Num=3 Z=case2_Zin_add Ohm Noise=yes 
+V_Source:SRC220  N__197 0 Type="V_1Tone" V[1]=(polar(-vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutnDC_lna V Vac=(polar(-vtest1/2,0)) mV SaveCurrent=1 
+V_Source:SRC47  N__234 0 Type="V_1Tone" V[1]=(polar(vtest2/2.0,0)) mV Freq[1]=RFfreq GHz    Vdc=0 V Vac=(polar(vtest2/2.0,0)) mV SaveCurrent=1 
+case2_ADD_sd2:X34  N__282 case2_voutp_add_sd2 case2_voutn_add_sd2 case2_vdd_add_sd2 case2_gnd case2_vb_add_sd2 
+
+case2_Zin_add=file{DAC6, "case2_Zin_add"}
+V_Source:SRC177  case2_LO_Qn_mx_dd1 0 Type="V_1Tone" V[1]=polar(1.2,270) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC134  case3_vb_mn2_2_p 0 Type="V_DC" Vdc=case3_Vb_mn2_2_p V SaveCurrent=1 
+V_Source:SRC179  case2_LO_Ip_mx_dd1 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC124  case1_vb_mn2_3 0 Type="V_DC" Vdc=case1_Vb_mn2_3 V SaveCurrent=1 
+MNlo_1_N:X51  case1_LO_In_mx_sd1 case1_LO_In_mxin_sd1 case1_vb_mnlo_mx_sd1 
+Port:Term86  N__169 0 Num=1 Z=case2_Zin_add Ohm Noise=yes 
+case3_MN2_5_P:X86  case3_vinp_mn2_5 N__283 
+Port:Term85  N__253 0 Num=31 Z=case1_Zin_add Ohm Noise=yes 
+
+case3_Zoutp_mn2=file{DAC8, "case3_Zoutp_mn2"}
+case3_Zoutn_mn2=file{DAC9, "case3_Zoutn_mn2"}
+V_Source:SRC216  N__250 0 Type="V_1Tone" V[1]=(polar(vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutpDC_lna V Vac=(polar(vtest1/2,0)) mV SaveCurrent=1 
+
+case3_Vb_mn2_1_p=0.5
+case3_Vb_mn2_1_n=case3_Vb_mn2_1_p
+case3_Vb_mn2_2_p=0.8
+case3_Vb_mn2_2_n=case3_Vb_mn2_2_p
+case3_Vb_mn2_3_p=0.5
+case3_Vb_mn2_3_n=case3_Vb_mn2_3_p
+V_Source:SRC136  N__248 0 Type="V_1Tone" V[1]=(polar(-vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutnDC_lna V Vac=(polar(-vtest1/2,0)) mV SaveCurrent=1 
+
+case3_mn1_0=1.0
+case3_mn1_1=0.0
+case3_mn1_2=0.0
+case3_mn1_3=0.0
+case3_mn1_4=0.0
+case3_mn1_5=0.0
+V_Source:SRC103  case1_vb_mn1_2 0 Type="V_DC" Vdc=case1_Vb_mn1_2 V SaveCurrent=1 
+aele case2_Voutp_add_sd2=mix(HB.case2_voutp_add_sd2,{0,1});case2_Voutn_add_sd2=mix(HB.case2_voutn_add_sd2,{0,1});case2_Ioutp_add_sd2=mix(HB.case2_ioutp_add_sd2.i,{0,1});case2_Ioutn_add_sd2=mix(HB.case2_ioutn_add_sd2.i,{0,1});case2_Zoutp_add_sd2_org=case2_Voutp_add_sd2/case2_Ioutp_add_sd2;case2_Zoutn_add_sd2_org=case2_Voutn_add_sd2/case2_Ioutn_add_sd2;case2_Zoutp_add_sd2 = if (real(case2_Zoutp_add_sd2_org)>0) then case2_Zoutp_add_sd2_org else 0.01+j*imag(case2_Zoutp_add_sd2_org);case2_Zoutn_add_sd2 = if (real(case2_Zoutn_add_sd2_org)>0) then case2_Zoutn_add_sd2_org else 0.01+j*imag(case2_Zoutn_add_sd2_org);
+V_Source:SRC194  case3_vb_mn3_1_n 0 Type="V_DC" Vdc=case3_Vb_mn3_1_n V SaveCurrent=1 
+MNlo_1_P:X50  case1_LO_Ip_mx_sd1 case1_LO_Ip_mxin_sd1 case1_vb_mnlo_mx_sd1 
+V_Source:SRC208  N__193 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case2_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+Port:Term90  N__255 0 Num=5 Z=case2_Zin_add Ohm Noise=yes 
+V_Source:SRC116  case2_vdd_lna_ss1 0 Type="V_DC" Vdc=case2_Vdd_lna_ss1 SaveCurrent=1 
+MNlo_1_P:X61  case3_LO_Qp_mx_dd1 case3_LO_Qp_mxin_dd1 case3_vb_mnlo_mx_dd1 
+V_Source:SRC112  case1_vb_lna_ss1 0 Type="V_DC" Vdc=case1_Vb_lna_ss1 V SaveCurrent=1 
+
+case1_Vdd_mx_sd1=2.5
+case1_Vb_mx_sd1=1.6
+
+case3_Vb_mnlo_mx_dd1=0.0
+case3_Vb_mnlo_mx_dd2=1.4
+V_Source:SRC198  case3_vb_mn3_2_n 0 Type="V_DC" Vdc=case3_Vb_mn3_2_n V SaveCurrent=1 
+V_Source:SRC181  case2_vb3_add_sd1 0 Type="V_DC" Vdc=case2_Vb3_add_sd1 V SaveCurrent=1 
+V_Source:SRC135  N__235 0 Type="V_1Tone" V[1]=(polar(vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutpDC_lna V Vac=(polar(vtest1/2,0)) mV SaveCurrent=1 
+
+case2_mn2_0=1.0
+case2_mn2_1=0.0
+case2_mn2_2=0.0
+case2_mn2_3=0.0
+case2_mn2_4=0.0
+case2_mn2_5=0.0
+Short:case2_ioutn_add_sd2  N__280 case2_voutn_add_sd2 Mode=0 SaveCurrent=yes 
+Short:case1_iin_mn2_1  N__263 case1_vin_mn2_1 Mode=0 SaveCurrent=yes 
+aele case2_Iin_mn2_4=mix(HB.case2_iin_mn2_4.i,{0,1});case2_Vin_mn2_4=mix(HB.case2_vin_mn2_4,{0,1});case2_Zin_mn2_4_org=case2_Vin_mn2_4/case2_Iin_mn2_4;case2_Zin_mn2_4=if (real(case2_Zin_mn2_4_org)>0) then case2_Zin_mn2_4_org else 0.01+j*imag(case2_Zin_mn2_4_org);
+case1_MN2_4:X76  case1_vin_mn2_4 N__305 
+V_Source:SRC196  case3_vdd_add_dd1 0 Type="V_DC" Vdc=case3_Vdd_add_dd1 V SaveCurrent=1 
+V_Source:SRC132  case3_vb_mn2_3_p 0 Type="V_DC" Vdc=case3_Vb_mn2_3_p V SaveCurrent=1 
+Short:case3_iinn_mn2_3  N__295 case3_vinn_mn2_3 Mode=0 SaveCurrent=yes 
+case3_MN2_5_N:X87  case3_vinn_mn2_5 N__303 
+case2_MN2_2:X92  case2_vin_mn2_2 N__272 case2_vb_mn2_2 
+Short:case1_iin_mn2_4  N__107 case1_vin_mn2_4 Mode=0 SaveCurrent=yes 
+#uselib "ckt" , "DAC"
+DAC:DAC12  File="/home/local/ace/hy7557/rf_rx_0306_wrk/HB_Z3_a_0618.ds" Type="dataset" Block="aele_112.HB2.HB" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="RFfreq" iVal1=RFfreq 
+MNlo_1_N:X58  case2_LO_In_mx_dd1 case2_LO_In_mxin_dd1 case2_vb_mnlo_mx_dd1 
+#uselib "ckt" , "DAC"
+DAC:DAC2  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC1_a_0618.ds" Type="dataset" Block="aele_40.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+V_Source:SRC113  case1_vdd_lna_ss1 0 Type="V_DC" Vdc=case1_Vdd_lna_ss1 V SaveCurrent=1 
+Short:case3_ioutp_add_dd1  N__81 case3_voutp_add_dd1 Mode=0 SaveCurrent=yes 
+Port:Term83  N__313 0 Num=29 Z=case1_Zin_add Ohm Noise=yes 
+#uselib "ckt" , "DAC"
+DAC:DAC4  File="/home/local/ace/hy7557/rf_rx_0306_wrk/HB_Z3_a_0618.ds" Type="dataset" Block="aele_114.HB2.HB" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="RFfreq" iVal1=RFfreq 
+MNlo_1_P:X56  case2_LO_Qp_mx_dd1 case2_LO_Qp_mxin_dd1 case2_vb_mnlo_mx_dd1 
+#uselib "ckt" , "DAC"
+DAC:DAC6  File="/home/local/ace/hy7557/rf_rx_0306_wrk/HB_Z3_a_0618.ds" Type="dataset" Block="aele_115.HB2.HB" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="RFfreq" iVal1=RFfreq 
+aele case1_Iin_mn2_5=mix(HB.case1_iin_mn2_5.i,{0,1});case1_Vin_mn2_5=mix(HB.case1_vin_mn2_5,{0,1});case1_Zin_mn2_5_org=case1_Vin_mn2_5/case1_Iin_mn2_5;case1_Zin_mn2_5=if (real(case1_Zin_mn2_5_org)>0) then case1_Zin_mn2_5_org else 0.01+j*imag(case1_Zin_mn2_5_org);
+V_Source:SRC164  case2_vb_mnlo_mx_dd1 0 Type="V_DC" Vdc=case2_Vb_mnlo_mx_dd1 SaveCurrent=1 
+Short:case3_iinn_mn2_4  N__197 case3_vinn_mn2_4 Mode=0 SaveCurrent=yes 
+Short:case3_iinn_mn2_5  N__145 case3_vinn_mn2_5 Mode=0 SaveCurrent=yes 
+V_Source:SRC130  case3_vb_mn2_1_p 0 Type="V_DC" Vdc=case3_Vb_mn2_1_p SaveCurrent=1 
+#uselib "ckt" , "DAC"
+DAC:DAC3  File="/home/local/ace/hy7557/rf_rx_0306_wrk/HB_Z3_a_0618.ds" Type="dataset" Block="aele_117.HB2.HB" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="RFfreq" iVal1=RFfreq 
+Port:Term82  N__298 0 Num=28 Z=case1_Zin_add Ohm Noise=yes 
+aele case2_Iin_mn2_1=mix(HB.case2_iin_mn2_1.i,{0,1});case2_Vin_mn2_1=mix(HB.case2_vin_mn2_1,{0,1});case2_Zin_mn2_1_org=case2_Vin_mn2_1/case2_Iin_mn2_1;case2_Zin_mn2_1=if (real(case2_Zin_mn2_1_org)>0) then case2_Zin_mn2_1_org else 0.01+j*imag(case2_Zin_mn2_1_org);
+MNlo_1_P:X53  case2_LO_Qp_mx_dd2 case2_LO_Qp_mxin_dd2 case2_vb_mnlo_mx_dd2 
+aele case2_Zin_mn2=case2_mn2_0*case2_Zin_mn2_0+case2_mn2_1*case2_Zin_mn2_1+case2_mn2_2*case2_Zin_mn2_2+case2_mn2_3*case2_Zin_mn2_3+case2_mn2_4*case2_Zin_mn2_4+case2_mn2_5*case2_Zin_mn2_5;
+V_Source:SRC156  N__266 0 Type="V_1Tone" V[1]=(polar(vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutpDC_lna V Vac=(polar(vtest1/2,0)) mV SaveCurrent=1 
+Short:case3_iinp_mn2_1  N__235 case3_vinp_mn2_1 Mode=0 SaveCurrent=yes 
+V_Source:SRC190  case2_vb_mn3_2_n 0 Type="V_DC" Vdc=case2_Vb_mn3_2_n V SaveCurrent=1 
+V_Source:SRC127  case2_vb_mn2_3 0 Type="V_DC" Vdc=case2_Vb_mn2_3 V SaveCurrent=1 
+MNlo_1_P:X54  case2_LO_Ip_mx_dd1 case2_LO_Ip_mxin_dd1 case2_vb_mnlo_mx_dd1 
+Short:case1_iin_mn2_2  N__123 case1_vin_mn2_2 Mode=0 SaveCurrent=yes 
+V_Source:SRC222  N__187 0 Type="V_1Tone" V[1]=(polar(-vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutnDC_lna V Vac=(polar(-vtest1/2,0)) mV SaveCurrent=1 
+V_Source:SRC223  N__81 0 Type="V_1Tone" V[1]=(polar(vtest2/2.0,0)) mV Freq[1]=RFfreq GHz    Vdc=0 V Vac=(polar(vtest2/2.0,0)) mV SaveCurrent=1 
+case3_MN2_4_N:X85  case3_vinn_mn2_4 N__172 
+#uselib "ckt" , "DAC"
+DAC:DAC1  File="/home/local/ace/hy7557/rf_rx_0306_wrk/HB_Z3_a_0618.ds" Type="dataset" Block="aele_116.HB2.HB" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="RFfreq" iVal1=RFfreq 
+
+case1_mn1_0=1.0
+case1_mn1_1=0.0
+case1_mn1_2=0.0
+case1_mn1_3=0.0
+case1_mn1_4=0.0
+case1_mn1_5=0.0
+aele case3_Zinp_mn2=case3_mn2_0_p*case3_Zinp_mn2_0+case3_mn2_1_p*case3_Zinp_mn2_1+case3_mn2_2_p*case3_Zinp_mn2_2+case3_mn2_3_p*case3_Zinp_mn2_3+case3_mn2_4_p*case3_Zinp_mn2_4+case3_mn2_5_p*case3_Zinp_mn2_5;case3_Zinn_mn2=case3_mn2_0_n*case3_Zinn_mn2_0+case3_mn2_1_n*case3_Zinn_mn2_1+case3_mn2_2_n*case3_Zinn_mn2_2+case3_mn2_3_n*case3_Zinn_mn2_3+case3_mn2_4_n*case3_Zinn_mn2_4+case3_mn2_5_n*case3_Zinn_mn2_5;
+
+case1_Zin_add=file{DAC3, "case1_Zin_add"}
+
+case1_VoutDC_lna=file{DAC2, "case1_VoutDC_lna"}
+V_Source:SRC215  N__280 0 Type="V_1Tone" V[1]=(polar(-vtest2/2.0,0)) mV Freq[1]=RFfreq GHz    Vdc=0 V Vac=(polar(-vtest2/2.0,0)) mV SaveCurrent=1 
+V_Source:SRC191  case2_vb1_add_sd1 0 Type="V_DC" Vdc=case2_Vb1_add_sd1 V SaveCurrent=1 
+V_Source:SRC119  case2_vdd_lna_ss2 0 Type="V_DC" Vdc=case2_Vdd_lna_ss2 V SaveCurrent=1 
+V_Source:SRC160  case2_vdd_mx_dd2 0 Type="V_DC" Vdc=case2_Vdd_mx_dd2 SaveCurrent=1 
+
+case2_Vdd_mx_dd2=2.5
+case2_Vb_mx_dd2=0.5
+V_Source:SRC166  case3_vb_mnlo_mx_dd2 0 Type="V_DC" Vdc=case3_Vb_mnlo_mx_dd2 V SaveCurrent=1 
+V_Source:SRC204  case3_LO_Qp_mx_dd2 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC213  N__156 0 Type="V_1Tone" V[1]=(polar(-vtest2/2.0,0)) mV Freq[1]=RFfreq GHz    Vdc=0 V Vac=(polar(-vtest2/2.0,0)) mV SaveCurrent=1 
+V_Source:SRC217  N__237 0 Type="V_1Tone" V[1]=(polar(vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutpDC_lna V Vac=(polar(vtest1/2,0)) mV SaveCurrent=1 
+V_Source:SRC117  case2_vb_lna_ss1 0 Type="V_DC" Vdc=case2_Vb_lna_ss1 V SaveCurrent=1 
+
+case3_Vb_mn3_1_p=1.05
+case3_Vb_mn3_1_n=case3_Vb_mn3_1_p
+case3_Vb_mn3_2_p=0.8
+case3_Vb_mn3_2_n=case3_Vb_mn3_2_p
+Short:case2_ioutn_add_sd1  N__156 case2_voutn_add_sd1 Mode=0 SaveCurrent=yes 
+V_Source:SRC158  case1_vb_mx_sd1 0 Type="V_DC" Vdc=case1_Vb_mx_sd1 V SaveCurrent=1 
+aele case1_Iin_mn2_4=mix(HB.case1_iin_mn2_4.i,{0,1});case1_Vin_mn2_4=mix(HB.case1_vin_mn2_4,{0,1});case1_Zin_mn2_4_org=case1_Vin_mn2_4/case1_Iin_mn2_4;case1_Zin_mn2_4=if (real(case1_Zin_mn2_4_org)>0) then case1_Zin_mn2_4_org else 0.01+j*imag(case1_Zin_mn2_4_org);
+V_Source:SRC161  case3_vdd_mx_dd2 0 Type="V_DC" Vdc=case3_Vdd_mx_dd2 V SaveCurrent=1 
+V_Source:SRC102  case1_vb_mn1_3 0 Type="V_DC" Vdc=case1_Vb_mn1_3 V SaveCurrent=1 
+V_Source:SRC201  case3_vb_mn3_2_p 0 Type="V_DC" Vdc=case3_Vb_mn3_2_p V SaveCurrent=1 
+V_Source:SRC195  case3_LO_Qn_mx_dd2 0 Type="V_1Tone" V[1]=polar(1.2,270) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+
+case2_mn3_1_p=1.0
+case2_mn3_1_n=case2_mn3_1_p
+case2_mn3_2_p=0.0
+case2_mn3_2_n=case2_mn3_2_p
+case2_mn3_4_p=0.0
+case2_mn3_4_n=case2_mn3_4_p
+V_Source:SRC133  case3_vb_mn2_2_n 0 Type="V_DC" Vdc=case3_Vb_mn2_2_n V SaveCurrent=1 
+V_Source:SRC192  case2_LO_Qp_mx_dd2 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC109  case3_vb_mn1_3 0 Type="V_DC" Vdc=case3_Vb_mn1_3 V SaveCurrent=1 
+V_Source:SRC153  N__308 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case1_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+case3_MN2_1_N:X79  case3_vinn_mn2_1 N__323 case3_vb_mn2_1_n 
+
+case3_mn2_0_p=1.0
+case3_mn2_0_n=case3_mn2_0_p
+case3_mn2_1_p=0.0
+case3_mn2_1_n=case3_mn2_1_p
+case3_mn2_2_p=0.0
+case3_mn2_2_n=case3_mn2_2_p
+case3_mn2_3_p=0.0
+case3_mn2_3_n=case3_mn2_3_p
+case3_mn2_4_p=0.0
+case3_mn2_4_n=case3_mn2_4_p
+case3_mn2_5_p=0.0
+case3_mn2_5_n=case3_mn2_5_p
+#uselib "ckt" , "DAC"
+DAC:DAC9  File="/home/local/ace/hy7557/rf_rx_0306_wrk/HB_Z3_a_0618.ds" Type="dataset" Block="aele_111.HB2.HB" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="RFfreq" iVal1=RFfreq 
+MNlo_1_P:X64  case3_LO_Qp_mx_dd2 case3_LO_Qp_mxin_dd2 case3_vb_mnlo_mx_dd2 
+
+case1_Vdd_lna_ss1=2.0
+case1_Vb_lna_ss1=1.47
+case1_Vdd_lna_ss2=2.5
+case1_Vb_lna_ss2=1.5
+V_Source:SRC152  N__123 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case1_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+V_Source:SRC106  case2_vb_mn1_2 0 Type="V_DC" Vdc=case2_Vb_mn1_2 V SaveCurrent=1 
+
+case1_mx_sd1=1.0
+
+case3_add_dd0=1.0
+case3_add_dd1=0.0
+HB:HB2 MaxOrder=5 Freq[1]=LOfreq GHz Freq[2]=RFfreq GHz Order[1]=11 Order[2]=3 StatusLevel=2 FundOversample=1 \
+Restart=no OutputBudgetIV=no \
+HBSS_WSP=0 SweepVar="RFfreq" SweepPlan="HB2_stim" OutputPlan="HB2_Output" UseKrylov=0 SamanskiiConstant=2 \
+
+
+SweepPlan: HB2_stim Start=0.5 Stop=6.5 Step=0.1 
+
+OutputPlan:HB2_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      SavedEquationName[1]="case1_Zin_mn2" \
+      SavedEquationName[2]="case1_Zout_add" \
+      SavedEquationName[3]="case2_Zin_mn2" \
+      SavedEquationName[4]="case2_Zoutn_add" \
+      SavedEquationName[5]="case2_Zoutp_add" \
+      SavedEquationName[6]="case3_Zinn_mn2" \
+      SavedEquationName[7]="case3_Zinp_mn2" \
+      SavedEquationName[8]="case3_Zoutn_add" \
+      SavedEquationName[9]="case3_Zoutp_add" \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+Tran:HB2_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+Freq[1]=LOfreq GHz Order[1]=11 
+
+Component:tahb_HB2 Module="ATAHB" Type="ModelExtractor" \ 
+ Tran_Analysis="HB2_tran" HB_Analysis="HB2" 
+
+aele case1_Iin_mn2_2=mix(HB.case1_iin_mn2_2.i,{0,1});case1_Vin_mn2_2=mix(HB.case1_vin_mn2_2,{0,1});case1_Zin_mn2_2_org=case1_Vin_mn2_2/case1_Iin_mn2_2;case1_Zin_mn2_2=if (real(case1_Zin_mn2_2_org)>0) then case1_Zin_mn2_2_org else 0.01+j*imag(case1_Zin_mn2_2_org);
+Short:case3_iinn_mn2_1  N__248 case3_vinn_mn2_1 Mode=0 SaveCurrent=yes 
+
+case1_Zout_mn2=file{DAC1, "case1_Zout_mn2"}
+aele case2_Iin_mn2_3=mix(HB.case2_iin_mn2_3.i,{0,1});case2_Vin_mn2_3=mix(HB.case2_vin_mn2_3,{0,1});case2_Zin_mn2_3_org=case2_Vin_mn2_3/case2_Iin_mn2_3;case2_Zin_mn2_3=if (real(case2_Zin_mn2_3_org)>0) then case2_Zin_mn2_3_org else 0.01+j*imag(case2_Zin_mn2_3_org);
+V_Source:SRC101  case1_vb_mn1_1 0 Type="V_DC" Vdc=case1_Vb_mn1_1 V SaveCurrent=1 
+aele case3_Vinp_mn2_2=mix(HB.case3_vinp_mn2_2,{0,1});case3_Vinn_mn2_2=mix(HB.case3_vinn_mn2_2,{0,1});case3_Iinp_mn2_2=mix(HB.case3_iinp_mn2_2.i,{0,1});case3_Iinn_mn2_2=mix(HB.case3_iinn_mn2_2.i,{0,1});case3_Zinp_mn2_2_org=case3_Vinp_mn2_2/case3_Iinp_mn2_2;case3_Zinn_mn2_2_org=case3_Vinn_mn2_2/case3_Iinn_mn2_2;case3_Zinp_mn2_2=if (real(case3_Zinp_mn2_2_org)>0) then case3_Zinp_mn2_2_org else 0.01+j*imag(case3_Zinp_mn2_2_org);case3_Zinn_mn2_2=if (real(case3_Zinn_mn2_2_org)>0) then case3_Zinn_mn2_2_org else 0.01+j*imag(case3_Zinn_mn2_2_org);
+V_Source:SRC187  case2_vb_mn3_1_n 0 Type="V_DC" Vdc=case2_Vb_mn3_1_n V SaveCurrent=1 
+V_Source:SRC199  case3_LO_In_mx_dd1 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+aele case3_Zoutp_add=case3_add_dd0*case3_Zoutp_add_dd0+case3_add_dd1*case3_Zoutp_add_dd1;case3_Zoutn_add=case3_add_dd0*case3_Zoutn_add_dd0+case3_add_dd1*case3_Zoutn_add_dd1;
+Short:case2_iin_mn2_4  N__301 case2_vin_mn2_4 Mode=0 SaveCurrent=yes 
+Short:case3_iinp_mn2_5  N__271 case3_vinp_mn2_5 Mode=0 SaveCurrent=yes 
+Short:case2_iin_mn2_2  N__190 case2_vin_mn2_2 Mode=0 SaveCurrent=yes 
+MNlo_1_N:X65  case3_LO_In_mx_dd2 case3_LO_In_mxin_dd2 case3_vb_mnlo_mx_dd2 
+V_Source:SRC171  case1_LO_Ip_mx_sd1 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC120  case3_vdd_lna_sd1 0 Type="V_DC" Vdc=case3_Vdd_lna_sd1 SaveCurrent=1 
+Port:Term97  N__284 0 Num=35 Z=case3_Zinp_add Ohm Noise=yes 
+case2_MN2_5:X91  case2_vin_mn2_5 N__255 
+
+case1_Vb_mn1_1=0.5
+case1_Vb_mn1_2=0.5
+case1_Vb_mn1_3=0.5
+
+case2_mn1_0=1.0
+case2_mn1_1=0.0
+case2_mn1_2=0.0
+case2_mn1_3=0.0
+case2_mn1_4=0.0
+case2_mn1_5=0.0
+aele case3_Vinp_mn2_3=mix(HB.case3_vinp_mn2_3,{0,1});case3_Vinn_mn2_3=mix(HB.case3_vinn_mn2_3,{0,1});case3_Iinp_mn2_3=mix(HB.case3_iinp_mn2_3.i,{0,1});case3_Iinn_mn2_3=mix(HB.case3_iinn_mn2_3.i,{0,1});case3_Zinp_mn2_3_org=case3_Vinp_mn2_3/case3_Iinp_mn2_3;case3_Zinn_mn2_3_org=case3_Vinn_mn2_3/case3_Iinn_mn2_3;case3_Zinp_mn2_3=if (real(case3_Zinp_mn2_3_org)>0) then case3_Zinp_mn2_3_org else 0.01+j*imag(case3_Zinp_mn2_3_org);case3_Zinn_mn2_3=if (real(case3_Zinn_mn2_3_org)>0) then case3_Zinn_mn2_3_org else 0.01+j*imag(case3_Zinn_mn2_3_org);
+
+case3_Vb_mn1_1=0.5
+case3_Vb_mn1_2=0.5
+case3_Vb_mn1_3=0.5
+Short:case3_iinp_mn2_4  N__250 case3_vinp_mn2_4 Mode=0 SaveCurrent=yes 
+case2_MN2_3:X89  case2_vin_mn2_3 N__205 case2_vb_mn2_3 
+
+case1_mn2_0=1.0
+case1_mn2_1=0.0
+case1_mn2_2=0.0
+case1_mn2_3=0.0
+case1_mn2_4=0.0
+case1_mn2_5=0.0
+aele case1_Iin_mn2_1=mix(HB.case1_iin_mn2_1.i,{0,1});case1_Vin_mn2_1=mix(HB.case1_vin_mn2_1,{0,1});case1_Zin_mn2_1_org=case1_Vin_mn2_1/case1_Iin_mn2_1;case1_Zin_mn2_1=if (real(case1_Zin_mn2_1_org)>0) then case1_Zin_mn2_1_org else 0.01+j*imag(case1_Zin_mn2_1_org);
+V_Source:SRC209  N__292 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case2_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+MNlo_1_N:X66  case3_LO_Qn_mx_dd1 case3_LO_Qn_mxin_dd1 case3_vb_mnlo_mx_dd1 
+Short:case1_iin_mn2_5  N__36 case1_vin_mn2_5 Mode=0 SaveCurrent=yes 
+
+vtest0=2
+vtest1=5
+vtest2=10
+V_Source:SRC184  case2_vb_mn3_1_p 0 Type="V_DC" Vdc=case2_Vb_mn3_1_p SaveCurrent=1 
+V_Source:SRC139  case2_vdd_add_sd2 0 Type="V_DC" Vdc=case2_Vdd_add_sd2 V SaveCurrent=1 
+Short:case3_iinn_mn2_2  N__187 case3_vinn_mn2_2 Mode=0 SaveCurrent=yes 
+Short:case3_ioutn_add_dd1  N__306 case3_voutn_add_dd1 Mode=0 SaveCurrent=yes 
+V_Source:SRC193  case3_LO_Qn_mx_dd1 0 Type="V_1Tone" V[1]=polar(1.2,270) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC162  case3_vb_mx_dd2 0 Type="V_DC" Vdc=case3_Vb_mx_dd2 V SaveCurrent=1 
+
+case1_Vb_mn3_1=1.0
+case1_Vb_mn3_2=0.8
+V_Source:SRC111  case3_gnd 0 Type="V_DC" Vdc=0.0 V SaveCurrent=1 
+V_Source:SRC114  case1_vdd_lna_ss2 0 Type="V_DC" Vdc=case1_Vdd_lna_ss2 V SaveCurrent=1 
+MNlo_1_P:X63  case3_LO_Ip_mx_dd1 case3_LO_Ip_mxin_dd1 case3_vb_mnlo_mx_dd1 
+case2_MN2_1:X88  case2_vin_mn2_1 N__169 case2_vb_mn2_1 
+Short:case1_iin_mn2_3  N__308 case1_vin_mn2_3 Mode=0 SaveCurrent=yes 
+V_Source:SRC131  case3_vb_mn2_3_n 0 Type="V_DC" Vdc=case3_Vb_mn2_3_n V SaveCurrent=1 
+V_Source:SRC214  N__273 0 Type="V_1Tone" V[1]=(polar(vtest2/2.0,0)) mV Freq[1]=RFfreq GHz    Vdc=0 V Vac=(polar(vtest2/2.0,0)) mV SaveCurrent=1 
+Short:case2_iin_mn2_1  N__188 case2_vin_mn2_1 Mode=0 SaveCurrent=yes 
+V_Source:SRC207  case3_LO_Qp_mx_dd1 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+aele case2_Voutp_add_sd1=mix(HB.case2_voutp_add_sd1,{0,1});case2_Voutn_add_sd1=mix(HB.case2_voutn_add_sd1,{0,1});case2_Ioutp_add_sd1=mix(HB.case2_ioutp_add_sd1.i,{0,1});case2_Ioutn_add_sd1=mix(HB.case2_ioutn_add_sd1.i,{0,1});case2_Zoutp_add_sd1_org=case2_Voutp_add_sd1/case2_Ioutp_add_sd1;case2_Zoutn_add_sd1_org=case2_Voutn_add_sd1/case2_Ioutn_add_sd1;case2_Zoutp_add_sd1 = if (real(case2_Zoutp_add_sd1_org)>0) then case2_Zoutp_add_sd1_org else 0.01+j*imag(case2_Zoutp_add_sd1_org);case2_Zoutn_add_sd1 = if (real(case2_Zoutn_add_sd1_org)>0) then case2_Zoutn_add_sd1_org else 0.01+j*imag(case2_Zoutn_add_sd1_org);
+
+case1_mn3_0=1.0
+case1_mn3_1=0.0
+case1_mn3_2=0.0
+case1_mn3_4=0.0
+
+case3_mx_dd1=0.0
+case3_mx_dd2=1.0
+Short:case3_iinp_mn2_3  N__237 case3_vinp_mn2_3 Mode=0 SaveCurrent=yes 
+
+Rs=50.0
+V_Source:SRC105  case2_vb_mn1_3 0 Type="V_DC" Vdc=case2_Vb_mn1_3 V SaveCurrent=1 
+aele case1_Zout_add_ss0=mix(case1_Zout_mn2,{0,1});
+V_Source:SRC206  case3_LO_Ip_mx_dd1 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+Port:Term84  N__305 0 Num=30 Z=case1_Zin_add Ohm Noise=yes 
+case3_MN2_3_P:X82  case3_vinp_mn2_3 N__252 case3_vb_mn2_3_p 
+case3_ADD_dd1:X35  N__44 N__19 case3_voutp_add_dd1 case3_voutn_add_dd1 case3_vdd_add_dd1 case3_gnd 
+V_Source:SRC110  case3_vb_mn1_2 0 Type="V_DC" Vdc=case3_Vb_mn1_2 V SaveCurrent=1 
+MNlo_1_P:X49  case1_LO_Qp_mx_sd1 case1_LO_Qp_mxin_sd1 case1_vb_mnlo_mx_sd1 
+
+case3_VoutpDC_lna=file{DAC10, "case3_VoutpDC_lna"}
+case3_VoutnDC_lna=file{DAC11, "case3_VoutnDC_lna"}
+Port:Term99  N__167 0 Num=38 Z=case3_Zinn_add Ohm Noise=yes 
+Port:Term91  N__310 0 Num=39 Z=case3_Zinn_add Ohm Noise=yes 
+
+case3_lna_sd1=1.0
+Port:Term93  N__303 0 Num=41 Z=case3_Zinn_add Ohm Noise=yes 
+V_Source:SRC185  case2_vb_mn2_2 0 Type="V_DC" Vdc=case2_Vb_mn2_2 V SaveCurrent=1 
+V_Source:SRC221  N__295 0 Type="V_1Tone" V[1]=(polar(-vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutnDC_lna V Vac=(polar(-vtest1/2,0)) mV SaveCurrent=1 
+aele case1_Zin_mn2_0=mix(case1_Zin_add,{0,1});
+V_Source:SRC155  N__36 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case1_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+MNlo_1_N:X60  case2_LO_In_mx_dd2 case2_LO_In_mxin_dd2 case2_vb_mnlo_mx_dd2 
+
+case2_Zout_mn2=file{DAC4, "case2_Zout_mn2"}
+V_Source:SRC169  case1_LO_Qn_mx_sd1 0 Type="V_1Tone" V[1]=polar(1.2,270) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC218  N__271 0 Type="V_1Tone" V[1]=(polar(vtest1/2,0)) mV Freq[1]=RFfreq GHz    Vdc=case3_VoutpDC_lna V Vac=(polar(vtest1/2,0)) mV SaveCurrent=1 
+aele case2_Zoutp_add=case2_add_sd1*case2_Zoutp_add_sd1+case2_add_sd2*case2_Zoutp_add_sd2;case2_Zoutn_add=case2_add_sd1*case2_Zoutn_add_sd1+case2_add_sd2*case2_Zoutn_add_sd2;
+case3_MN2_3_N:X83  case3_vinn_mn2_3 N__310 case3_vb_mn2_3_n 
+V_Source:SRC200  case3_vb_mn3_1_p 0 Type="V_DC" Vdc=case3_Vb_mn3_1_p V SaveCurrent=1 
+V_Source:SRC188  case2_vb_mn3_2_p 0 Type="V_DC" Vdc=case2_Vb_mn3_2_p V SaveCurrent=1 
+MNlo_1_P:X55  case2_LO_Ip_mx_dd2 case2_LO_Ip_mxin_dd2 case2_vb_mnlo_mx_dd2 
+V_Source:SRC115  case1_vb_lna_ss2 0 Type="V_DC" Vdc=case1_Vb_lna_ss2 V SaveCurrent=1 
+V_Source:SRC107  case2_gnd 0 Type="V_DC" Vdc=0.0 V SaveCurrent=1 
+case1_MN2_3:X75  case1_vin_mn2_3 N__313 case1_vb_mn2_3 
+case1_MN2_2:X74  case1_vin_mn2_2 N__298 case1_vb_mn2_2 
+V_Source:SRC121  case3_vb1_lna_sd1 0 Type="V_DC" Vdc=case3_Vb1_lna_sd1 V SaveCurrent=1 
+case1_MN2_5:X77  case1_vin_mn2_5 N__253 
+
+case2_Vdd_add_sd1=2.5
+case2_Vb1_add_sd1=1.5
+case2_Vb2_add_sd1=case2_VoutDC_mn2
+case2_Vb3_add_sd1=1.9
+case2_Vdd_add_sd2=2.5
+case2_Vb_add_sd2=1.5
+case3_MN2_2_N:X81  case3_vinn_mn2_2 N__167 case3_vb_mn2_2_n 
+#uselib "ckt" , "DAC"
+DAC:DAC10  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC1_a_0618.ds" Type="dataset" Block="aele_34.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+
+case2_Vb_mnlo_mx_dd1=0.0
+case2_Vb_mnlo_mx_dd2=0.5
+V_Source:SRC186  case2_LO_In_mx_dd2 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC180  case2_LO_Ip_mx_dd2 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+
+case2_lna_ss0=0.0
+case2_lna_ss1=1.0
+case2_lna_ss2=0.0
+
+case1_Vb_mnlo_mx_sd1=2.5
+
+case1_add_ss0=1.0
+V_Source:SRC205  case3_LO_In_mx_dd2 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+Port:Term55  N__300 0 Num=27 Z=case1_Zin_add Ohm Noise=yes 
+V_Source:SRC178  case2_LO_In_mx_dd1 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+
+case3_Zinp_add=file{DAC12, "case3_Zinp_add"}
+case3_Zinn_add=file{DAC13, "case3_Zinn_add"}
+
+case2_Vb_mn3_1_p=1.0
+case2_Vb_mn3_1_n=case2_Vb_mn3_1_p
+case2_Vb_mn3_2_p=0.8
+case2_Vb_mn3_2_n=case2_Vb_mn3_2_p
+aele case3_Vinp_mn2_1=mix(HB.case3_vinp_mn2_1,{0,1});case3_Vinn_mn2_1=mix(HB.case3_vinn_mn2_1,{0,1});case3_Iinp_mn2_1=mix(HB.case3_iinp_mn2_1.i,{0,1});case3_Iinn_mn2_1=mix(HB.case3_iinn_mn2_1.i,{0,1});case3_Zinp_mn2_1_org=case3_Vinp_mn2_1/case3_Iinp_mn2_1;case3_Zinn_mn2_1_org=case3_Vinn_mn2_1/case3_Iinn_mn2_1;case3_Zinp_mn2_1=if (real(case3_Zinp_mn2_1_org)>0) then case3_Zinp_mn2_1_org else 0.01+j*imag(case3_Zinp_mn2_1_org);case3_Zinn_mn2_1=if (real(case3_Zinn_mn2_1_org)>0) then case3_Zinn_mn2_1_org else 0.01+j*imag(case3_Zinn_mn2_1_org);
+aele case2_Iin_mn2_2=mix(HB.case2_iin_mn2_2.i,{0,1});case2_Vin_mn2_2=mix(HB.case2_vin_mn2_2,{0,1});case2_Zin_mn2_2_org=case2_Vin_mn2_2/case2_Iin_mn2_2;case2_Zin_mn2_2=if (real(case2_Zin_mn2_2_org)>0) then case2_Zin_mn2_2_org else 0.01+j*imag(case2_Zin_mn2_2_org);
+#uselib "ckt" , "DAC"
+DAC:DAC13  File="/home/local/ace/hy7557/rf_rx_0306_wrk/HB_Z3_a_0618.ds" Type="dataset" Block="aele_113.HB2.HB" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="RFfreq" iVal1=RFfreq 
+case3_MN2_1_P:X78  case3_vinp_mn2_1 N__281 case3_vb_mn2_1_p 
+Port:Term87  N__272 0 Num=2 Z=case2_Zin_add Ohm Noise=yes 
+V_Source:SRC170  case1_LO_Qp_mx_sd1 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+
+case2_add_sd1=1.0
+case2_add_sd2=0.0
+
+case1_Vb_mn2_1=0.5
+case1_Vb_mn2_2=0.8
+case1_Vb_mn2_3=0.5
+MNlo_1_N:X68  case3_LO_Qn_mx_dd2 case3_LO_Qn_mxin_dd2 case3_vb_mnlo_mx_dd2 
+
+case1_lna_ss0=0.0
+case1_lna_ss1=1.0
+case1_lna_ss2=0.0
+V_Source:SRC163  case1_vb_mnlo_mx_sd1 0 Type="V_DC" Vdc=case1_Vb_mnlo_mx_sd1 V SaveCurrent=1 
+MNlo_1_P:X62  case3_LO_Ip_mx_dd2 case3_LO_Ip_mxin_dd2 case3_vb_mnlo_mx_dd2 
+
+case3_mn3_1_p=1.0
+case3_mn3_1_n=case3_mn3_1_p
+case3_mn3_2_p=0.0
+case3_mn3_2_n=case3_mn3_2_p
+case3_mn3_4_p=0.0
+case3_mn3_4_n=case3_mn3_4_p
+case3_MN2_2_P:X80  case3_vinp_mn2_2 N__279 case3_vb_mn2_2_p 
+V_Source:SRC122  case3_vb2_lna_sd1 0 Type="V_DC" Vdc=case3_Vb2_lna_sd1 V SaveCurrent=1 
+V_Source:SRC154  N__107 0 Type="V_1Tone" V[1]=(polar(vtest1,0)) mV Freq[1]=RFfreq GHz    Vdc=case1_VoutDC_lna V Vac=(polar(vtest1,0)) mV SaveCurrent=1 
+
+case2_mx_dd1=0.0
+case2_mx_dd2=1.0
+Short:case2_ioutp_add_sd1  N__234 case2_voutp_add_sd1 Mode=0 SaveCurrent=yes 
+Port:Term95  N__279 0 Num=33 Z=case3_Zinp_add Ohm Noise=yes 
+case3_MN2_4_P:X84  case3_vinp_mn2_4 N__284 
+
+case3_Vdd_add_dd1=2.0
+Port:Term23  N__206 0 Num=6 Z=case2_Zout_mn2 Ohm Noise=yes 
+
+case2_Vb_mn2_1=0.5
+case2_Vb_mn2_2=0.8
+case2_Vb_mn2_3=0.5
+V_Source:SRC104  case2_vb_mn1_1 0 Type="V_DC" Vdc=case2_Vb_mn1_1 V SaveCurrent=1 
+Port:Term94  N__282 0 Num=42 Z=case2_Zout_mn2 Ohm Noise=yes 
+V_Source:SRC176  case2_LO_Qp_mx_dd1 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+
+case2_Vb_mn1_1=0.5
+case2_Vb_mn1_2=0.5
+case2_Vb_mn1_3=0.5
+Port:Term100  N__44 0 Num=43 Z=case3_Zoutp_mn2 Ohm Noise=yes 
+Port:Term101  N__19 0 Num=44 Z=case3_Zoutn_mn2 Ohm Noise=yes 
+aele case2_Zin_mn2_0=mix(case2_Zin_add,{0,1});
+Port:Term96  N__252 0 Num=34 Z=case3_Zinp_add Ohm Noise=yes 
+V_Source:SRC157  case1_vdd_mx_sd1 0 Type="V_DC" Vdc=case1_Vdd_mx_sd1 V SaveCurrent=1 
+V_Source:SRC168  case1_LO_In_mx_sd1 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+Port:Term89  N__285 0 Num=4 Z=case2_Zin_add Ohm Noise=yes 
+aele case3_Zoutp_add_dd0=mix(case3_Zoutp_mn2,{0,1});case3_Zoutn_add_dd0=mix(case3_Zoutn_mn2,{0,1});
+V_Source:SRC137  case2_vb2_add_sd1 0 Type="V_DC" Vdc=case2_Vb2_add_sd1 V SaveCurrent=1 
+
+case1=0
+case2=0
+case3=1.0
+Port:Term98  N__283 0 Num=36 Z=case3_Zinp_add Ohm Noise=yes 
+V_Source:SRC108  case3_vb_mn1_1 0 Type="V_DC" Vdc=case3_Vb_mn1_1 SaveCurrent=1 
+V_Source:SRC123  case1_vb_mn2_1 0 Type="V_DC" Vdc=case1_Vb_mn2_1 V SaveCurrent=1 
+Port:Term92  N__172 0 Num=40 Z=case3_Zinn_add Ohm Noise=yes 
+V_Source:SRC165  case2_vb_mnlo_mx_dd2 0 Type="V_DC" Vdc=case2_Vb_mnlo_mx_dd2 V SaveCurrent=1 
+V_Source:SRC189  case2_vdd_add_sd1 0 Type="V_DC" Vdc=case2_Vdd_add_sd1 SaveCurrent=1 
+aele case3_Vinp_mn2_5=mix(HB.case3_vinp_mn2_5,{0,1});case3_Vinn_mn2_5=mix(HB.case3_vinn_mn2_5,{0,1});case3_Iinp_mn2_5=mix(HB.case3_iinp_mn2_5.i,{0,1});case3_Iinn_mn2_5=mix(HB.case3_iinn_mn2_5.i,{0,1});case3_Zinp_mn2_5_org=case3_Vinp_mn2_5/case3_Iinp_mn2_5;case3_Zinn_mn2_5_org=case3_Vinn_mn2_5/case3_Iinn_mn2_5;case3_Zinp_mn2_5=if (real(case3_Zinp_mn2_5_org)>0) then case3_Zinp_mn2_5_org else 0.01+j*imag(case3_Zinp_mn2_5_org);case3_Zinn_mn2_5=if (real(case3_Zinn_mn2_5_org)>0) then case3_Zinn_mn2_5_org else 0.01+j*imag(case3_Zinn_mn2_5_org);
+V_Source:SRC125  case1_vb_mn2_2 0 Type="V_DC" Vdc=case1_Vb_mn2_2 V SaveCurrent=1 
+
+case2_Vdd_lna_ss1=2.0
+case2_Vb_lna_ss1=1.47
+case2_Vdd_lna_ss2=2.5
+case2_Vb_lna_ss2=1.5
+Port:Term65  N__323 0 Num=37 Z=case3_Zinn_add Ohm Noise=yes 
+
+case3_Vdd_lna_sd1=2.5
+case3_Vb1_lna_sd1=1.4
+case3_Vb2_lna_sd1=0.6
+V_Source:SRC159  case2_vb_mx_dd2 0 Type="V_DC" Vdc=case2_Vb_mx_dd2 V SaveCurrent=1 
+case1_MN2_1:X73  case1_vin_mn2_1 N__300 case1_vb_mn2_1 
+V_Source:SRC174  case1_vb_mn3_1 0 Type="V_DC" Vdc=case1_Vb_mn3_1 V SaveCurrent=1 
+#uselib "ckt" , "DAC"
+DAC:DAC8  File="/home/local/ace/hy7557/rf_rx_0306_wrk/HB_Z3_a_0618.ds" Type="dataset" Block="aele_110.HB2.HB" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="RFfreq" iVal1=RFfreq 
+aele case3_Vinp_mn2_4=mix(HB.case3_vinp_mn2_4,{0,1});case3_Vinn_mn2_4=mix(HB.case3_vinn_mn2_4,{0,1});case3_Iinp_mn2_4=mix(HB.case3_iinp_mn2_4.i,{0,1});case3_Iinn_mn2_4=mix(HB.case3_iinn_mn2_4.i,{0,1});case3_Zinp_mn2_4_org=case3_Vinp_mn2_4/case3_Iinp_mn2_4;case3_Zinn_mn2_4_org=case3_Vinn_mn2_4/case3_Iinn_mn2_4;case3_Zinp_mn2_4=if (real(case3_Zinp_mn2_4_org)>0) then case3_Zinp_mn2_4_org else 0.01+j*imag(case3_Zinp_mn2_4_org);case3_Zinn_mn2_4=if (real(case3_Zinn_mn2_4_org)>0) then case3_Zinn_mn2_4_org else 0.01+j*imag(case3_Zinn_mn2_4_org);
+V_Source:SRC118  case2_vb_lna_ss2 0 Type="V_DC" Vdc=case2_Vb_lna_ss2 V SaveCurrent=1 
+aele case1_Iin_mn2_3=mix(HB.case1_iin_mn2_3.i,{0,1});case1_Vin_mn2_3=mix(HB.case1_vin_mn2_3,{0,1});case1_Zin_mn2_3_org=case1_Vin_mn2_3/case1_Iin_mn2_3;case1_Zin_mn2_3=if (real(case1_Zin_mn2_3_org)>0) then case1_Zin_mn2_3_org else 0.01+j*imag(case1_Zin_mn2_3_org);
+V_Source:SRC197  case3_LO_Ip_mx_dd2 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+#uselib "ckt" , "DAC"
+DAC:DAC11  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC1_a_0618.ds" Type="dataset" Block="aele_36.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+aele case2_Iin_mn2_5=mix(HB.case2_iin_mn2_5.i,{0,1});case2_Vin_mn2_5=mix(HB.case2_vin_mn2_5,{0,1});case2_Zin_mn2_5_org=case2_Vin_mn2_5/case2_Iin_mn2_5;case2_Zin_mn2_5=if (real(case2_Zin_mn2_5_org)>0) then case2_Zin_mn2_5_org else 0.01+j*imag(case2_Zin_mn2_5_org);
+V_Source:SRC129  case3_vb_mn2_1_n 0 Type="V_DC" Vdc=case3_Vb_mn2_1_n V SaveCurrent=1 
+V_Source:SRC175  case2_LO_Qn_mx_dd2 0 Type="V_1Tone" V[1]=polar(1.2,270) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+
+case2_VoutDC_mn2=file{DAC14, "case2_VoutDC_mn2"}
+#uselib "ckt" , "DAC"
+DAC:DAC14  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC1_a_0618.ds" Type="dataset" Block="aele_37.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 

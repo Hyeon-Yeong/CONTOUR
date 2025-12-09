@@ -1,0 +1,29 @@
+Selected case, Best Cost found at iteration, Best Cost (final_expected_cost)
+case2,10, -30.33273927404256
+Total Entire Iterations, Alpha Particles, Alpha Iterations, Omega Particles, Omega Iterations
+10, 5, 6, 8, 4
+Alpha Convergence Condition, Softmax Temperature
+False, 1.0
+Alpha Parameter, Alpha Value
+case2_mn1_0, 4.4790069604514314e-05
+case2_mn1_1, 0.9865669360908467
+case2_mn1_2, 5.065809606724577e-05
+case2_mn1_3, 0.002524629408017766
+case2_mn1_4, 0.01018386493179079
+case2_mn1_5, 0.0006291214036728873
+case2_lna_ss0, 5.298279784076549e-05
+case2_lna_ss1, 0.9998384633136207
+case2_lna_ss2, 0.00010855388853855781
+case2_mn2_0, 0.9638407600359103
+case2_mn2_1, 0.014162794784998238
+case2_mn2_2, 0.01750884240619094
+case2_mn2_3, 0.004270130817586498
+case2_mn2_4, 0.00017371365250602952
+case2_mn2_5, 4.3758302807850345e-05
+case2_add_sd1, 0.9924367397754489
+case2_add_sd2, 0.00756326022455114
+case2_mn3_1_p, 0.002438861737195749
+case2_mn3_2_p, 0.9951222765256085
+case2_mn3_4_p, 0.002438861737195749
+case2_mx_dd1, 0.008356069730399186
+case2_mx_dd2, 0.9916439302696008

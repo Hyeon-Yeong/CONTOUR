@@ -10,66 +10,9 @@ from tqdm import tqdm
 
 import pdb
 
-ads_python = "/usr/local/packages/ADS2023/tools/python/bin/python3.10"
-
-# def run_ads_simulation(simulations, instance_list, wrk_space, tb_date, sm_alphas, omegas):
-#     try:
-#         tot_sum = 0
-#         for simulation in tqdm(simulations, desc="ADS Simulations"):
-
-#             neg_z_found = False
-#             nan_z_found = False
-
-#             # tqdm.write(f"Running simulation: {tb_name}")
-#             modified_netlist = modify_netlist(
-#                 simulation_name = simulation,
-#                 instance_list = instance_list, 
-#                 sm_alphas=sm_alphas,
-#                 omegas= omegas,
-#                 wrk_space= wrk_space,
-#                 tb_date= tb_date
-#                 )
-#             wait_until_file_stable(modified_netlist, timeout=60, interval=0.5)
-#             # tqdm.write(f"DONE Modified netlist file: {modified_netlist}")
-
-#             # tb_name = f"{simulation}_{tb_date}"
-#             tb_name = f"{simulation}_0618" ################################################################# HARD CODED FOR NOW
-
-#             dsfile = run_simulation(modified_netlistfile_dir=modified_netlist, tb_name=tb_name, wrk_space=wrk_space)
-#             wait_until_file_stable(dsfile, timeout=60, interval=0.5)
-#             # tqdm.write(f"DONE Simulation dsfile: {dsfile}")
-
-#             if "HB_Z" in simulation:
-#                 cmd = [ads_python, "/home/local/ace/hy7557/rf_rx_darts/catch_neg_Z.py", dsfile]
-#                 try:
-#                     result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-#                     neg_z_found, nan_z_found = json.loads(result.stdout.strip())
-
-#                     if neg_z_found or nan_z_found:
-#                         print(f"[ERROR] Negative Z values found in simulation {simulation}: {neg_z_found}")
-#                         print(f"[ERROR] NaN Z values found in simulation {simulation}: {nan_z_found}")
-#                         return None, neg_z_found, nan_z_found
-
-#                 except subprocess.CalledProcessError as e:
-#                     print("[ERROR] Negative Z check script crashed.")
-#                     print("Command:", " ".join(cmd))
-#                     print("Return code:", e.returncode)
-#                     print("STDERR:\n", e.stderr)
-#                     print("STDOUT:\n", e.stdout)
-#                     raise RuntimeError("Negative Z check script failed.") from e
-                
-#                 # JUST FOR VERIFICATION ##########################
-#                 # with open(f"ads_simulation_{tb_name}_debug.json", "w") as errfile:
-#                 #     errfile.write(result.stderr)
-#                 #     print("simulation STDERR written to a file")
-#                 tot_sum += 1
-#         return dsfile, neg_z_found, nan_z_found
-    
-#     except Exception as e:
-#         print(f"[ERROR] Unexpected error in run_ads_simulation: {e}")
-#         traceback.print_exc()
-#         pdb.set_trace()
-#         raise
+#######################################################################
+ads_python = "/usr/local/packages/ADS2023/tools/python/bin/python3.10" # USE YOUR LOCATION OF ADS PYTHON HERE
+#######################################################################
 
 def run_ads_simulation_per_case(simulations, instance_list, wrk_space, tb_date, sm_alphas, omegas):
     try:

@@ -27,11 +27,11 @@ from circuit_dict_utils import generate_initial_params_dict, generate_initial_al
 from circuit_dict_utils import convert_Vb_from_Vb_frac
 from run_ads_simulation import get_simulation_output, run_ads_simulation_per_case
 # from run_ads_simulation import run_ads_simulation
-from rf_rx_bo_utils import read_best_voltage_per_case_csv, read_best_voltage_csv, read_best_sim_output_csv, remove_csv_after_iteration, extract_case_number, check_alpha_convergence
+from CONTOUR.src.csv_utils import read_best_voltage_per_case_csv, read_best_voltage_csv, read_best_sim_output_csv, remove_csv_after_iteration, extract_case_number, check_alpha_convergence
 from circuit_dict_utils import pso_bounds
 
 from rf_rx_pso_utils import pso_with_nan_control, pso_per_case_with_nan_control
-from bo_fom import FoM_z01_manual, FoM_z01_per_case
+from CONTOUR.src.fom import FoM_z01_manual, FoM_z01_per_case
 
 
 parser = argparse.ArgumentParser()
@@ -47,8 +47,10 @@ parser.add_argument("--opt_w_iters", type=int, default=2, help="Number of iterat
 parser.add_argument("--tb_date", type=str, default="0618", choices = ["0618", "a_0618", "b_0618", "a_0729", "b_0729", "c_0729", "d_0729"], help="Testbench type for simulation data")
 
 args= parser.parse_args()
+###########################################################
+wrk_space = "/home/local/ace/hy7557/rf_rx_0306_wrk" # ADS workspace of your own
+###########################################################
 
-wrk_space = "/home/local/ace/hy7557/rf_rx_0306_wrk"
 task = args.task
 temp = 1.0
 opt_type="PSO"
@@ -68,8 +70,8 @@ neg_z_fom = -1e6
 nan_z_fom = -1e9
 
 opt_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
-folder_path = f"./{opt_type}_3cases_result/{task}_{opt_time}_{max_iterations}it_{alpha_iterations}alpha_{omega_iterations}omega"
-current_best_path = f"./{opt_type}_3cases_current_best/{task}_{opt_time}"
+folder_path = f"./results/contour/{task}_{opt_time}_{max_iterations}it_{alpha_iterations}alpha_{omega_iterations}omega"
+current_best_path = f"./results/contour/{opt_type}_3cases_current_best/{task}_{opt_time}"
 os.makedirs(folder_path, exist_ok=True)
 os.makedirs(current_best_path, exist_ok=True)
 

@@ -36,7 +36,9 @@ parser.add_argument("--Manual_circuit", type=str, default="Manual6", choices=["M
 parser.add_argument("--tb_date", type=str, default="0618", choices = ["0618", "a_0618", "b_0618", "a_0729", "b_0729", "c_0729", "d_0729"], help="Testbench type for simulation data")
 args= parser.parse_args()
 
-wrk_space = "/home/local/ace/hy7557/rf_rx_0306_wrk"
+###########################################################
+wrk_space = "/home/local/ace/hy7557/rf_rx_0306_wrk" # ADS workspace of your own
+###########################################################
 task = args.task
 temp = 1.0
 opt_type="PSO"
@@ -50,7 +52,7 @@ omega_particles = args.omega_particles
 base_needed = args.base_needed
 
 opt_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
-folder_path = f"./{manual_circuit}_{opt_type}_result/{manual_circuit}/{task}_{opt_time}_{omega_particles}particles_{omega_iterations}iter"
+folder_path = f"./results/manual/{manual_circuit}/{task}_{opt_time}_{omega_particles}particles_{omega_iterations}iter"
 os.makedirs(folder_path, exist_ok=True)
 
 manual_opt_sim_output_csv = os.path.join(folder_path, f"{opt_time}_{manual_circuit}_sim_output.csv")

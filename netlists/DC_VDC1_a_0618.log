@@ -1,6 +1,6 @@
 ; PUBLIC DEMO NETLIST
 ; This file shows the RX testbench topology and parameterization
-; used by CONTOUR. It omits proprietary foundry model includes.
+; used by CONTOUR. It uses/built upon 130nm_bulk.net device models. (NOT GIVEN)
 ; Generate your own schematic design in ADS and extract the netlist.
 ; THIS FILE IS ONLY AN EXAMPLE
 
@@ -15,7 +15,7 @@ define MNlo_1_N ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3aMNlo__1__N_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aMNlo__1__N_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 R:R1  vout vb R=20 kOhm Noise=yes 
 C:C1  vin vout C=10 nF 
@@ -28,7 +28,7 @@ define MNlo_1_P ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3aMNlo__1__P_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aMNlo__1__P_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 R:R1  vout vb R=20 kOhm Noise=yes 
 C:C1  vin vout C=1 nF 
@@ -41,7 +41,7 @@ define case1_LNA_ss1 ( vin  vout  vdd  gnd  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase1__LNA__ss1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase1__LNA__ss1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 R:R2  vin N__5 R=R1 Ohm Noise=yes 
 "pmos":MOSFET4  vdd vb vout vdd Length=L4 um Width=1 um Mode=1 Noise=yes _M=W4 
@@ -99,7 +99,7 @@ C:C3  N__6 0 C=C1 pF
 INDQ_Z:L2  vdd vout L=L_l nH Q=15 F=5.0 GHz Mode=1 Rdc=0 Ohm 
 #ifndef inc_rf__rx__lib_3acase1__LNA__ss2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase1__LNA__ss2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "pmos":MOSFET5  vdd vb N__6 vdd Length=L4 um Width=1 um Mode=1 Noise=yes _M=W4 
 end case1_LNA_ss2
@@ -111,7 +111,7 @@ define case2_LNA_ss1 ( vin  vout  vdd  gnd  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__LNA__ss1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__LNA__ss1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 R:R2  vin N__5 R=R1 Ohm Noise=yes 
 "pmos":MOSFET4  vdd vb vout vdd Length=L4 um Width=1 um Mode=1 Noise=yes _M=W4 
@@ -169,7 +169,7 @@ C:C3  N__6 0 C=C1 pF
 INDQ_Z:L2  vdd vout L=L_l nH Q=15 F=5.0 GHz Mode=1 Rdc=0 Ohm 
 #ifndef inc_rf__rx__lib_3acase2__LNA__ss2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__LNA__ss2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "pmos":MOSFET5  vdd vb N__6 vdd Length=L4 um Width=1 um Mode=1 Noise=yes _M=W4 
 end case2_LNA_ss2
@@ -181,7 +181,7 @@ define case3_LNA_sd1 ( vin  voutp  voutn  vdd  gnd  vb1  vb2 )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase3__LNA__sd1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase3__LNA__sd1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "nmos":MOSFET1  voutp vb1 vin gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
 "nmos":MOSFET2  voutn N__8 gnd gnd Length=L2 um Width=1um Mode=1 Noise=yes _M=W2 
@@ -203,7 +203,7 @@ end case3_LNA_sd1
 
 #ifndef inc_rf__rx__lib_3aDC__VDC1__0618_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aDC__VDC1__0618_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 V_Source:SRC32  N__163 0 Type="V_1Tone" V[1]=(polar(vtest0,0)) mV Freq[1]=RFfreq GHz    Vdc=case1_VoutDC_mn1 V Vac=(polar(vtest0,0)) mV SaveCurrent=1 
 case1_LNA_ss2:X17  N__64 case1_vout_lna_ss2 case1_vdd_lna_ss2 case1_gnd case1_vb_lna_ss2 

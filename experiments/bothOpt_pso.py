@@ -37,11 +37,6 @@ from bo_fom import FoM_z01_manual, FoM_z01_per_case
 
 
 parser = argparse.ArgumentParser()
-# parser.add_argument("--iters", type=int, default=2, help="Maximum number of iterations for optimization")
-# parser.add_argument("--a_parts", type=int, default=1, help="Number of particles for alpha optimization")
-# parser.add_argument("--a_iters", type=int, default=2, help="Number of iterations for alpha optimization")
-# parser.add_argument("--w_parts", type=int, default=1, help="Number of particles for omega optimization")
-# parser.add_argument("--w_iters", type=int, default=2, help="Number of iterations for omega optimization")
 parser.add_argument("--parts", type=int, default=2, help="Number of particles for (alpha, omega) optimization") # 
 parser.add_argument("--iters", type=int, default=2, help="Number of iterations for (alpha, omega) optimization")
 parser.add_argument("--task", type=str, default="singleGain", choices=["dualBW", "dualGain", "dualGains", "singleBW", "singleGain", "singleGains"], help="Task type for optimization")
@@ -52,7 +47,9 @@ parser.add_argument("--tb_date", type=str, default="0618", choices = ["0618", "a
 
 args= parser.parse_args()
 
-wrk_space = "/home/local/ace/hy7557/rf_rx_0306_wrk"
+###########################################################
+wrk_space = "/home/local/ace/hy7557/rf_rx_0306_wrk" # ADS workspace of your own
+###########################################################
 task = args.task
 temp = 1.0
 opt_type="PSO"
@@ -70,7 +67,7 @@ neg_z_fom = -1e6
 nan_z_fom = -1e9
 
 opt_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
-folder_path = f"./ablation2_bothOpt_{opt_type}_3cases_result/{task}_{opt_time}_{n_iterations}it_{n_particles}parts"
+folder_path = f"./results/bothOpt/{task}_{opt_time}_{n_iterations}it_{n_particles}parts"
 os.makedirs(folder_path, exist_ok=True)
 
 soft_case1_sim_output_csv = os.path.join(folder_path, f"{opt_time}_case1_best_sim_output.csv")

@@ -1,6 +1,6 @@
 ; PUBLIC DEMO NETLIST
 ; This file shows the RX testbench topology and parameterization
-; used by CONTOUR. It omits proprietary foundry model includes.
+; used by CONTOUR. It uses/built upon 130nm_bulk.net device models. (NOT GIVEN)
 ; Generate your own schematic design in ADS and extract the netlist.
 ; THIS FILE IS ONLY AN EXAMPLE
 
@@ -15,7 +15,7 @@ define MNlo_1_N ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3aMNlo__1__N_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aMNlo__1__N_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 R:R1  vout vb R=20 kOhm Noise=yes 
 C:C1  vin vout C=10 nF 
@@ -28,7 +28,7 @@ define MNlo_1_P ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3aMNlo__1__P_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aMNlo__1__P_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 R:R1  vout vb R=20 kOhm Noise=yes 
 C:C1  vin vout C=1 nF 
@@ -41,7 +41,7 @@ define case2_ADD_sd2 ( vin  voutp  voutn  vdd  gnd  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__ADD__sd2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__ADD__sd2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "nmos":MOSFET3  voutp N__14 gnd gnd Length=L3 um Width=1 um Mode=1 Noise=yes _M=W3 
 R:R2  vdd voutp R=R_l Ohm Noise=yes 
@@ -93,7 +93,7 @@ C:C3  N__6 0 C=C1 pF
 INDQ_Z:L2  vdd vout L=L_l nH Q=15 F=5.0 GHz Mode=1 Rdc=0 Ohm 
 #ifndef inc_rf__rx__lib_3acase2__LNA__ss2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__LNA__ss2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "pmos":MOSFET5  vdd vb N__6 vdd Length=L4 um Width=1 um Mode=1 Noise=yes _M=W4 
 end case2_LNA_ss2
@@ -105,7 +105,7 @@ define case2_MN1_3 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN1__3_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN1__3_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=0.13
@@ -122,7 +122,7 @@ define case2_MN2_2 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN2__2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN2__2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=10.0
@@ -139,7 +139,7 @@ define case2_MN3_4_N ( vin  vout )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN3__4__N_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN3__4__N_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1000.0
@@ -153,7 +153,7 @@ define case2_MN3_4_P ( vin  vout )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN3__4__P_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN3__4__P_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1000.0
@@ -167,7 +167,7 @@ define case2_MX_dd1 ( vinp  vinn  voutp  voutn  gnd  vlop  vlon )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MX__dd1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MX__dd1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "nmos":MOSFET1  voutp vlop vinp gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
 "nmos":MOSFET2  vinp vlon voutn gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
@@ -180,7 +180,7 @@ end case2_MX_dd1
 
 #ifndef inc_rf__rx__lib_3aManual6__0618_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aManual6__0618_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 MNlo_1_N:X63  case2_LO_In_mx_dd1 case2_LO_In_mxin_dd1 case2_vb_mnlo_mx_dd1 
 DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \

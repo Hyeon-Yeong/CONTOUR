@@ -1,6 +1,6 @@
 ; PUBLIC DEMO NETLIST
 ; This file shows the RX testbench topology and parameterization
-; used by CONTOUR. It omits proprietary foundry model includes.
+; used by CONTOUR. It uses/built upon 130nm_bulk.net device models. (NOT GIVEN)
 ; Generate your own schematic design in ADS and extract the netlist.
 ; THIS FILE IS ONLY AN EXAMPLE
 
@@ -15,7 +15,7 @@ define MNlo_1_N ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3aMNlo__1__N_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aMNlo__1__N_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 R:R1  vout vb R=20 kOhm Noise=yes 
 C:C1  vin vout C=10 nF 
@@ -28,7 +28,7 @@ define MNlo_1_P ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3aMNlo__1__P_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aMNlo__1__P_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 R:R1  vout vb R=20 kOhm Noise=yes 
 C:C1  vin vout C=1 nF 
@@ -41,7 +41,7 @@ define case1_MN1_1 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase1__MN1__1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase1__MN1__1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -56,7 +56,7 @@ define case1_MN1_2 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase1__MN1__2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase1__MN1__2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -73,7 +73,7 @@ define case1_MN1_3 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase1__MN1__3_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase1__MN1__3_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -90,7 +90,7 @@ define case1_MN1_4 ( vin  vout )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase1__MN1__4_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase1__MN1__4_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -104,7 +104,7 @@ define case1_MN1_5 ( vin  vout )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase1__MN1__5_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase1__MN1__5_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_L=10
@@ -121,7 +121,7 @@ define case1_MX_sd1 ( vin  voutp  voutn  vlop  vlon  vdd  gnd  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase1__MX__sd1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase1__MX__sd1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "nmos":MOSFET1  mx_voutp vlop vin gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
 "nmos":MOSFET2  vin vlon mx_voutn gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
@@ -147,7 +147,7 @@ define case2_MN1_1 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN1__1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN1__1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -162,7 +162,7 @@ define case2_MN1_2 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN1__2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN1__2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -179,7 +179,7 @@ define case2_MN1_3 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN1__3_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN1__3_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -196,7 +196,7 @@ define case2_MN1_4 ( vin  vout )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN1__4_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN1__4_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -210,7 +210,7 @@ define case2_MN1_5 ( vin  vout )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MN1__5_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MN1__5_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_L=10
@@ -227,7 +227,7 @@ define case2_MX_dd1 ( vinp  vinn  voutp  voutn  gnd  vlop  vlon )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MX__dd1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MX__dd1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "nmos":MOSFET1  voutp vlop vinp gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
 "nmos":MOSFET2  vinp vlon voutn gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
@@ -245,7 +245,7 @@ define case2_MX_dd2 ( vinp  vinn  vlop  vlon  voutp  voutn  vb  vdd  gnd )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase2__MX__dd2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase2__MX__dd2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "nmos":MOSFET1  voutp vlop N__5 N__5 Length=L3 um Width=1um Mode=1 Noise=yes _M=W3 
 "nmos":MOSFET2  voutn vlop N__1 N__1 Length=L3 um Width=1um Mode=1 Noise=yes _M=W3 
@@ -273,7 +273,7 @@ define case3_MN1_1 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase3__MN1__1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase3__MN1__1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -288,7 +288,7 @@ define case3_MN1_2 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase3__MN1__2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase3__MN1__2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -305,7 +305,7 @@ define case3_MN1_3 ( vin  vout  vb )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase3__MN1__3_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase3__MN1__3_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -322,7 +322,7 @@ define case3_MN1_4 ( vin  vout )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase3__MN1__4_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase3__MN1__4_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_C=1.0
@@ -336,7 +336,7 @@ define case3_MN1_5 ( vin  vout )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase3__MN1__5_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase3__MN1__5_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 
 MN_L=10
@@ -353,7 +353,7 @@ define case3_MX_dd1 ( vinp  vinn  voutp  voutn  gnd  vlop  vlon )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase3__MX__dd1_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase3__MX__dd1_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "nmos":MOSFET1  voutp vlop vinp gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
 "nmos":MOSFET2  vinp vlon voutn gnd Length=L1 um Width=1um Mode=1 Noise=yes _M=W1 
@@ -371,7 +371,7 @@ define case3_MX_dd2 ( vinp  vinn  vlop  vlon  voutp  voutn  vb  vdd  gnd )
 ;parameters 
 #ifndef inc_rf__rx__lib_3acase3__MX__dd2_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3acase3__MX__dd2_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 "nmos":MOSFET1  voutp vlop N__5 N__5 Length=L3 um Width=1um Mode=1 Noise=yes _M=W3 
 "nmos":MOSFET2  voutn vlop N__1 N__1 Length=L3 um Width=1um Mode=1 Noise=yes _M=W3 
@@ -394,7 +394,7 @@ end case3_MX_dd2
 
 #ifndef inc_rf__rx__lib_3aHB__Z1__0618_3aschematic__130nm__bulk_2enet
 #define inc_rf__rx__lib_3aHB__Z1__0618_3aschematic__130nm__bulk_2enet 1
-#include "/home/local/ace/hy7557/rf_rx_0306_wrk/130nm_bulk.net"
+#include "130nm_bulk.net"
 #endif
 V_Source:SRC185  case2_vb_mn1_3 0 Type="V_DC" Vdc=case2_Vb_mn1_3 V SaveCurrent=1 
 aele case1_Zin_mx=case1_mx_sd1*case1_Zin_mx_sd1;
@@ -716,15 +716,15 @@ V_Source:SRC106  N__85 0 Type="V_1Tone" V[1]=(polar(vtest2/2,0)) mV Freq[1]=RFfr
 Short:case2_iinn_mx_dd1  N__178 case2_vinn_mx_dd1 Mode=0 SaveCurrent=yes 
 Short:case2_iinp_mx_dd1  N__155 case2_vinp_mx_dd1 Mode=0 SaveCurrent=yes 
 #uselib "ckt" , "DAC"
-DAC:DAC2  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC2_a_0618.ds" Type="dataset" Block="aele_0.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+DAC:DAC2  File="DC_VDC2_a_0618.ds" Type="dataset" Block="aele_0.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
 
 case1_VoutDC_mn3=file{DAC1, "case1_VoutDC_mn3"}
 V_Source:SRC108  N__101 0 Type="V_1Tone" V[1]=polar(vtest2,0) mV Freq[1]=RFfreq GHz    Vdc=case1_VoutDC_mn3 V Vac=(polar(vtest2,0)) mV SaveCurrent=1 
 #uselib "ckt" , "DAC"
-DAC:DAC1  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC2_a_0618.ds" Type="dataset" Block="aele_18.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+DAC:DAC1  File="DC_VDC2_a_0618.ds" Type="dataset" Block="aele_18.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
 Short:case1_iin_mx_sd1  N__162 case1_vin_mx_sd1 Mode=0 SaveCurrent=yes 
 #uselib "ckt" , "DAC"
-DAC:DAC3  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC2_a_0618.ds" Type="dataset" Block="aele_0.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+DAC:DAC3  File="DC_VDC2_a_0618.ds" Type="dataset" Block="aele_0.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
 aele case1_Iin_mx_sd1=mix(HB.case1_iin_mx_sd1.i,{0,1});case1_Vin_mx_sd1=mix(HB.case1_vin_mx_sd1,{0,1});case1_Zin_mx_sd1_org=case1_Vin_mx_sd1/case1_Iin_mx_sd1;case1_Zin_mx_sd1=if (real(case1_Zin_mx_sd1_org)>0) then case1_Zin_mx_sd1_org else 0.01+j*imag(case1_Zin_mx_sd1_org);
 aele case2_Iinp_mx_dd1=mix(HB.case2_iinp_mx_dd1.i,{0,1});case2_Iinn_mx_dd1=mix(HB.case2_iinn_mx_dd1.i,{0,1});case2_Vinp_mx_dd1=mix(HB.case2_vinp_mx_dd1,{0,1});case2_Vinn_mx_dd1=mix(HB.case2_vinn_mx_dd1,{0,1});case2_Zinp_mx_dd1_org=case2_Vinp_mx_dd1/case2_Iinp_mx_dd1;case2_Zinn_mx_dd1_org=case2_Vinn_mx_dd1/case2_Iinn_mx_dd1;case2_Zinp_mx_dd1=if (real(case2_Zinp_mx_dd1_org) > 0) then case2_Zinp_mx_dd1_org else 0.01+j*imag(case2_Zinp_mx_dd1_org);case2_Zinn_mx_dd1=if (real(case2_Zinn_mx_dd1_org)>0) then case2_Zinn_mx_dd1_org else 0.01+j*imag(case2_Zinn_mx_dd1_org);
 aele case2_Iinp_mx_dd2=mix(HB.case2_iinp_mx_dd2.i,{0,1});case2_Iinn_mx_dd2=mix(HB.case2_iinn_mx_dd2.i,{0,1});case2_Vinp_mx_dd2=mix(HB.case2_vinp_mx_dd2,{0,1});case2_Vinn_mx_dd2=mix(HB.case2_vinn_mx_dd2,{0,1});case2_Zinp_mx_dd2_org=case2_Vinp_mx_dd2/case2_Iinp_mx_dd2;case2_Zinn_mx_dd2_org=case2_Vinn_mx_dd2/case2_Iinn_mx_dd2;case2_Zinp_mx_dd2=if (real(case2_Zinp_mx_dd2_org)>0) then case2_Zinp_mx_dd2_org else 0.01+j*imag(case2_Zinp_mx_dd2_org);case2_Zinn_mx_dd2=if (real(case2_Zinn_mx_dd2_org)>0) then case2_Zinn_mx_dd2_org else 0.01+j*imag(case2_Zinn_mx_dd2_org);
@@ -892,9 +892,9 @@ case2_VoutnDC_mn3=file{DAC3, "case2_VoutnDC_mn3"}
 case3_VoutpDC_mn3=file{DAC4, "case3_VoutpDC_mn3"}
 case3_VoutnDC_mn3=file{DAC5, "case3_VoutnDC_mn3"}
 #uselib "ckt" , "DAC"
-DAC:DAC5  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC2_a_0618.ds" Type="dataset" Block="aele_0.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+DAC:DAC5  File="DC_VDC2_a_0618.ds" Type="dataset" Block="aele_0.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
 #uselib "ckt" , "DAC"
-DAC:DAC4  File="/home/local/ace/hy7557/rf_rx_0306_wrk/DC_VDC2_a_0618.ds" Type="dataset" Block="aele_0.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
+DAC:DAC4  File="DC_VDC2_a_0618.ds" Type="dataset" Block="aele_0.DC1" InterpMode="linear" InterpDom="ri" ExtrapMode="interpMode" iVar1="freq" iVal1=freq 
 aele case2_Zout_mn1=case2_mn1_0*case2_Zout_mn1_0+case2_mn1_1*case2_Zout_mn1_1+case2_mn1_2*case2_Zout_mn1_2+case2_mn1_3*case2_Zout_mn1_3+case2_mn1_4*case2_Zout_mn1_4+case2_mn1_5*case2_Zout_mn1_5;
 aele case3_Zout_mn1=case3_mn1_0*case3_Zout_mn1_0+case3_mn1_1*case3_Zout_mn1_1+case3_mn1_2*case3_Zout_mn1_2+case3_mn1_3*case3_Zout_mn1_3+case3_mn1_4*case3_Zout_mn1_4+case3_mn1_5*case3_Zout_mn1_5;
 case2_MN1_1:X78  N__123 case2_vout_mn1_1 case2_vb_mn1_1 

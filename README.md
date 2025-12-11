@@ -2,7 +2,15 @@
 Continuous Topology Search for Unified RF Receiver Front-End Design Optimization, Hyeon-Yeong Yeo, Master's Thesis @ UT Austin ECE Fall 2025
 
 CONTOUR is a research framework for **automatic optimization and design of RF receiver (RX) front-ends**.  
+![RX frontend](figs/framework1-1.png)
+[View high-res PDF version](figs/framework1.pdf)
+
+![Search Space (Topology & circuit parameters)](figs/searchspace-1.png)
+[View high-res PDF version](figs/SearchSpace_percase_enlarged.pdf)
+
 It couples PSO, **Python-based optimization**,  with **Keysight ADS netlist simulations** for evaluation. In this framework, we are able to search over both circuit **topologies** and **device-level parameters**.
+![Optimization flow](figs/overallflow-1.png)
+[View high-res PDF version](figs/OverallFlow_enlarged.pdf)
 
 ---
 
@@ -17,7 +25,8 @@ CONTOUR automates this process for a dual-band RX front-end by:
 - Driving ADS simulations via netlists and parsing voltage results back into Python. Conversion gain and its BW is calculated based on the voltage results.
 - Cost is defined with Figure of Merit (FoM) per task. 
 - **Sequential, loading-aware simulation flow**: The evaluation will go through big three steps: DC simulation -> HB simulation -> HB simulation. First two simulations are for extracting the DC output voltages and Zin/Zout of each topology and stage. These information will be used as the termination condition of running HB simulation at the last stage, which is the actual evaulation. After the last HB simulation, the voltage output would be extracted. 
-
+![Loading-Aware Simulation](figs/loadingaware-1.png)
+[View high-res PDF version](figs/loadingaware_enlarged.pdf)
 ---
 
 ## Repository Structure
@@ -69,4 +78,5 @@ CONTOUR/
 │  ├─ bothOpt/
 │  └─ manaul/
 └─ docs/                    # Additional documentation
-   └─ How to run schematic level simulation in Keysight ADS using Python.pdf # Guide on running ADS with netlists
+│  ├─ How to run schematic level simulation in Keysight ADS using Python.pdf # Guide on running ADS with netlists
+│  └─ CONTOUR_testbench_settings # Figures of testbenches. Explanation on which information to import/export.
